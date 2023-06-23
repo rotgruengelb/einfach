@@ -37,7 +37,7 @@ def save_file(mode, **filedialogargs):
 
 
 
-def open_dir(**filedialogargs):
+def open_dir(**dirdialogargs):
     root = tk.Tk()
     root.withdraw()
     try:

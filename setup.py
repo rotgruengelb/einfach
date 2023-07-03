@@ -1,15 +1,14 @@
-
-
 from setuptools import setup, find_packages
 import codecs
 import os
+from einfach import __version__
 
 here = os.path.abspath(os.path.dirname(__file__))
 
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '0.1.0.6'
+VERSION = __version__
 DESCRIPTION = 'A collection of useful code "snippets"'
 LONG_DESCRIPTION = 'A collection of useful code "snippets" or "helpers" that implement little but annoying to add things for you'
 
@@ -33,10 +32,11 @@ setup(
     install_requires=[],
     keywords=['python', 'helper', 'helpers', 'help', 'easy code', 'ease of use', "snippets", "code snippets"],
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Topic :: Software Development"
+        "Topic :: Software Development",
+        "Topic :: Software Development :: User Interfaces"
     ]
 )

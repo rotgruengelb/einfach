@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import filedialog
 
+
+
 def open_file(mode, **filedialogargs):
     root = tk.Tk()
     root.withdraw()
@@ -16,7 +18,6 @@ def open_file(mode, **filedialogargs):
         else: raise ValueError("mode was not 'file', 'file_name', 'files' or 'file_names'!")
     except Exception as e:
         raise e
-
 
 
 def save_file(mode, **filedialogargs):
@@ -36,11 +37,10 @@ def save_file(mode, **filedialogargs):
         raise e
 
 
-
 def open_dir(**dirdialogargs):
     root = tk.Tk()
     root.withdraw()
     try:
-        dir_path = filedialog.askdirectory(**filedialogargs); return dir_path
+        dir_path = filedialog.askdirectory(**dirdialogargs); return dir_path
     except Exception as e:
         raise e

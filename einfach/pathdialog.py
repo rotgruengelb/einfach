@@ -4,7 +4,7 @@ from tkinter import filedialog
 
 
 def open_file(mode, **filedialogargs):
-    root = tk.Tk()
+    root = tk.Tk(
     root.withdraw()
     try:
         if mode == "file":

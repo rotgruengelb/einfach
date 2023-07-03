@@ -20,7 +20,7 @@ class AsyncUserInput(threading.Thread):
     """
 
     def __init__(self, input_callback, input_function = input, name: str = 'AsyncUserInput-thread'):
-        self.input_callback = input_callback
+        self.input_cllback = input_callback
         self.input_function = input_function
         self.paused         = False
         self.pause_cond     = threading.Condition(threading.Lock())

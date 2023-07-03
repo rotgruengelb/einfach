@@ -6,7 +6,7 @@ def clip(content: str, no_os_error: bool = False):
     if content.isspace() == False and not content == "":
         if sys.platform == "win32":
             try:
-                os.system(f'echo {content} | clip')
+                os.system('echo {content} | clip')
             except Exception as e: raise e
         elif no_os_error == False:
             raise OSError("Currently only win32 systems are supported!")

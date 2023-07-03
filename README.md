@@ -1,3 +1,5 @@
+[![test and lint einfach](https://github.com/rotgruengelb/einfach/actions/workflows/python-package.yml/badge.svg)](https://github.com/rotgruengelb/einfach/actions/workflows/python-package.yml)
+
 # Install
 ```shell
 pip install einfach

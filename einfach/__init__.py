@@ -5,6 +5,6 @@ __all__ = [
         'termutils'
         ]
 
-__version__ = '0.2.0.0'
+__version__ = '0.2.1.0'
 
 __license__ = 'MIT'

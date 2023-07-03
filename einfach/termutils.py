@@ -19,7 +19,7 @@ class AsyncUserInput(threading.Thread):
     ```
     """
 
-    def __init__(self, input_callback: function, input_function: function = input, name: str = 'AsyncUserInput-thread'):
+    def __init__(self, input_callback, input_function = input, name: str = 'AsyncUserInput-thread'):
         self.input_callback = input_callback
         self.input_function = input_function
         self.name           = name
@@ -33,7 +33,7 @@ class AsyncUserInput(threading.Thread):
             with self.pause_cond:
                 while self.paused:
                     self.pause_cond.wait()
-                self.input_callback(input())
+                self.input_callback(self.input_function())
 
     def pause(self):
         self.paused = True

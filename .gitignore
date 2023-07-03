@@ -1,7 +1,7 @@
 *.egg-info/
 dist/
 build/
-test.py
+local_test.py
 Pipfile.lock
 Pipfile
 */__pycache__/

@@ -37,10 +37,10 @@ def save_file(mode, **filedialogargs):
         raise e
 
 
-def open_dir(**filedialogargs):
+def open_dir(**dirdialogargs):
     root = tk.Tk()
     root.withdraw()
     try:
-        dir_path = filedialog.askdirectory(**filedialogargs); return dir_path
+        dir_path = filedialog.askdirectory(**dirdialogargs); return dir_path
     except Exception as e:
         raise e

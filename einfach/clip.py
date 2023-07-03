@@ -1,5 +1,7 @@
 import sys, os
 
+
+
 def clip(content: str, no_os_error: bool = False):
     if content.isspace() == False and not content == "":
         if sys.platform == "win32":

@@ -2,5 +2,7 @@
 dist/
 build/
 test.py
+Pipfile.lock
 Pipfile
 */__pycache__/
+__pycache__

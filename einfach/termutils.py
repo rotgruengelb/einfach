@@ -3,14 +3,21 @@ import threading
 
 class AsyncUserInput(threading.Thread):
     """
-    ### A class that runs as a separate thread for capturing user input asynchronously.
+    ### A class that runs as a separate thread 
+    ### for capturing user input asynchronously.
 
     #### Usage:
     ```py
-        async_input=AsyncInput(input_cbk=callback_function).
-        async_input.pause() # (WARNING!: Experimental could cause Problems.) Pauses until resumed.
-        async_input.resume() # Resume the input thread.
-        async_input.start() # (WARNING!: This is already done automatically).
+        async_input = AsyncInput(
+            input_callback = callback_function
+            input_functions = input
+            name = 'AsyncUserInput-thread').
+        async_input.pause() 
+        # (WARNING!: Experimental could cause Problems.) Pauses until resumed.
+        async_input.resume() 
+        # Resume the input thread.
+        async_input.start() 
+        # (WARNING!: This is already done automatically).
     ```
     #### Args:
     ```py
@@ -18,10 +25,12 @@ class AsyncUserInput(threading.Thread):
     ```
     """
 
-    def __init__(self, input_callback, input_function=input, name: str='AsyncUserInput-thread'):
-        self.input_callback=input_callback
-        self.input_function=input_function
-        self.paused=False
+    def __init__(self, input_callback, 
+                input_function = input,
+                name: str = 'AsyncUserInput-thread'):
+        self.input_callback = input_callback
+        self.input_function = input_function
+        self.paused = False
         self.pause_cond=threading.Condition(threading.Lock())
         super(AsyncUserInput, self).__init__(name=name)
         self.start()
@@ -34,10 +43,10 @@ class AsyncUserInput(threading.Thread):
                 self.input_callback(self.input_function())
 
     def pause(self):
-        self.paused=True
+        self.paused = True
         self.pause_cond.acquire()
 
     def resume(self):
-        self.paused=False
+        self.paused = False
         self.pause_cond.notify()
         self.pause_cond.release()

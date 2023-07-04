@@ -19,7 +19,8 @@ def open_file(mode, **filedialogargs):
         elif mode == "file_names":
             file_path = filedialog.askopenfilenames(**filedialogargs)
             return file_path
-        else: raise ValueError(errors.FILE_DIALOG_INVALID_MODE)
+        else: 
+            raise ValueError(errors.FILE_DIALOG_INVALID_MODE)
     except Exception as e:
         raise e
 
@@ -40,16 +41,17 @@ def save_file(mode, **filedialogargs):
         elif mode == "file_names":
             file_path = filedialog.askopenfilenames(**filedialogargs)
             return file_path
-        else: raise ValueError(errors.FILE_DIALOG_INVALID_MODE)
+        else: 
+            raise ValueError(errors.FILE_DIALOG_INVALID_MODE)
     except Exception as e:
         raise e
 
 
 def open_dir(**dirdialogargs):
-    root=tk.Tk()
+    root = tk.Tk()
     root.withdraw()
     try:
-        dir_path = filedialog.askdirectory(**dirdialogargs) 
+        dir_path = filedialog.askdirectory(**dirdialogargs)
         return dir_path
     except Exception as e:
         raise e

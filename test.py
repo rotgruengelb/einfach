@@ -1,8 +1,10 @@
-from einfach import termutils, __version__, __license__, clip, floatutils, pathdialog
+from einfach import termutils, clip, floatutils, pathdialog
 from unittest.mock import Mock, patch
 import pytest
 import sys
 from einfach.internal import errors
+from einfach import __license__, __version__
+
 
 print(__version__, __license__)
 

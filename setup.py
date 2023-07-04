@@ -14,24 +14,24 @@ LONG_DESCRIPTION = 'A collection of useful code "snippets" or "helpers" that imp
 
 # Setting up
 setup(
-    name = "einfach",
-    version = VERSION,
-    author = "rotgruengelb (Daniel)",
-    author_email = "<code@rotgruengelb.net>",
-    description = DESCRIPTION,
+    name="einfach",
+    version=VERSION,
+    author="rotgruengelb (Daniel)",
+    author_email="<code@rotgruengelb.net>",
+    description=DESCRIPTION,
     long_description_content_type = "text/markdown",
-    long_description = LONG_DESCRIPTION + "\n" + long_description,
-    packages = find_packages(),
-    license = __license__,
+    long_description=LONG_DESCRIPTION + "\n" + long_description,
+    packages=find_packages(),
+    license=__license__,
     url="https://github.com/rotgruengelb/einfach",
-    project_urls = {
+    project_urls={
         'Source': 'https://github.com/rotgruengelb/einfach',
         'Issues': 'https://github.com/rotgruengelb/einfach/issues',
         'Wiki': 'https://github.com/rotgruengelb/einfach/wiki/Features'
     },
-    install_requires = [],
-    keywords = ['python', 'helper', 'helpers', 'help', 'easy code', 'ease of use', "snippets", "code snippets"],
-    classifiers = [
+    install_requires=[],
+    keywords=['python', 'helper', 'helpers', 'help', 'easy code', 'ease of use', "snippets", "code snippets"],
+    classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Programming Language :: Python",

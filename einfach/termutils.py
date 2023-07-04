@@ -3,7 +3,7 @@ import threading
 
 class AsyncUserInput(threading.Thread):
     """
-    ### A class that runs as a separate thread 
+    ### A class that runs as a separate thread
     ### for capturing user input asynchronously.
 
     #### Usage:
@@ -14,7 +14,7 @@ class AsyncUserInput(threading.Thread):
             name = 'AsyncUserInput-thread').
         async_input.pause() 
         # (WARNING!: Experimental could cause Problems.) Pauses until resumed.
-        async_input.resume() 
+        async_input.resume()
         # Resume the input thread.
         async_input.start() 
         # (WARNING!: This is already done automatically).
@@ -25,13 +25,13 @@ class AsyncUserInput(threading.Thread):
     ```
     """
 
-    def __init__(self, input_callback, 
-                input_function = input,
-                name: str = 'AsyncUserInput-thread'):
+    def __init__(self, input_callback,
+                 input_function=input,
+                 name: str='AsyncUserInput-thread'):
         self.input_callback = input_callback
         self.input_function = input_function
         self.paused = False
-        self.pause_cond=threading.Condition(threading.Lock())
+        self.pause_cond = threading.Condition(threading.Lock())
         super(AsyncUserInput, self).__init__(name=name)
         self.start()
 

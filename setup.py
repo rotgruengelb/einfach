@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import codecs
 import os
-from einfach import __version__
+from einfach import __version__, __license__
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -22,12 +22,12 @@ setup(
     long_description_content_type="text/markdown",
     long_description=LONG_DESCRIPTION + "\n" + long_description,
     packages=find_packages(),
-    license="MIT",
+    license=__license__,
     url="https://github.com/rotgruengelb/einfach",
     project_urls={
-    'Source': 'https://github.com/rotgruengelb/einfach',
-    'Issues': 'https://github.com/rotgruengelb/einfach/issues',
-    'Wiki': 'https://github.com/rotgruengelb/einfach/wiki/Features'
+        'Source': 'https://github.com/rotgruengelb/einfach',
+        'Issues': 'https://github.com/rotgruengelb/einfach/issues',
+        'Wiki': 'https://github.com/rotgruengelb/einfach/wiki/Features'
     },
     install_requires=[],
     keywords=['python', 'helper', 'helpers', 'help', 'easy code', 'ease of use', "snippets", "code snippets"],

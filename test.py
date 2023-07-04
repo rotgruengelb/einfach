@@ -1,7 +1,10 @@
-from einfach import termutils, __version__, __license__, clip, floatutils, pathdialog
+from einfach import termutils, clip, floatutils, pathdialog
 from unittest.mock import Mock, patch
 import pytest
 import sys
+from einfach.internal import errors
+from einfach import __license__, __version__
+
 
 print(__version__, __license__)
 
@@ -15,15 +18,17 @@ def test_clip_success():
     assert True
     sys.platform = platform
 
+
 def test_clip_with_no_os_error():
     platform = sys.platform
     sys.platform = "win32"
     content = "Hello, world!"
-    clip.clip(content, no_os_error=True)
+    clip.clip(content, no_os_error = True)
     # Assert that the content is successfully clipped to the clipboard
     # You can add additional assertions here to check the clipboard contents
     assert True
     sys.platform = platform
+
 
 def test_clip_empty_content():
     platform = sys.platform
@@ -32,8 +37,9 @@ def test_clip_empty_content():
         content = ""
         clip.clip(content)
     # Assert that a ValueError is raised with the appropriate message
-    assert str(excinfo.value) == "Content can't be empty or only contain whitespace/spaces."
+    assert str(excinfo.value) == f"{errors.FILE_DIALOG_INVALID_MODE}"
     sys.platform = platform
+
 
 def test_clip_whitespace_content():
     platform = sys.platform
@@ -42,8 +48,9 @@ def test_clip_whitespace_content():
         content = "   "
         clip.clip(content)
     # Assert that a ValueError is raised with the appropriate message
-    assert str(excinfo.value) == "Content can't be empty or only contain whitespace/spaces."
+    assert str(excinfo.value) == f"{errors.FILE_DIALOG_INVALID_MODE}"
     sys.platform = platform
+
 
 def test_clip_non_supported_platform():
     platform = sys.platform
@@ -52,7 +59,7 @@ def test_clip_non_supported_platform():
         sys.platform = "linux"  # Simulating a non-supported platform
         clip.clip(content)
     # Assert that an OSError is raised with the appropriate message
-    assert str(excinfo.value) == "Currently only win32 systems are supported!"
+    assert str(excinfo.value) == f"{errors.ONLY_WIN32}"
     sys.platform = platform  # Restore the original platform value
 
 
@@ -61,9 +68,11 @@ def test_would_be_valid_float_valid_input():
     value = "3.14"
     assert floatutils.would_be_valid_float(value) is True
 
+
 def test_would_be_valid_float_invalid_input():
     value = "not a float"
     assert floatutils.would_be_valid_float(value) is False
+
 
 def test_is_float_in_range_within_range():
     value = 5.0
@@ -71,11 +80,13 @@ def test_is_float_in_range_within_range():
     max_value = 10.0
     assert floatutils.is_float_in_range(value, min_value, max_value) is True
 
+
 def test_is_float_in_range_below_range():
     value = 0.5
     min_value = 1.0
     max_value = 10.0
     assert floatutils.is_float_in_range(value, min_value, max_value) is False
+
 
 def test_is_float_in_range_above_range():
     value = 15.0
@@ -83,17 +94,20 @@ def test_is_float_in_range_above_range():
     max_value = 10.0
     assert floatutils.is_float_in_range(value, min_value, max_value) is False
 
+
 def test_is_float_in_range_at_boundary():
     value = 10.0
     min_value = 1.0
     max_value = 10.0
     assert floatutils.is_float_in_range(value, min_value, max_value) is True
 
+
 def test_is_float_in_range_with_integer_values():
     value = 5
     min_value = 1
     max_value = 10
     assert floatutils.is_float_in_range(value, min_value, max_value) is True
+
 
 
 @pytest.mark.parametrize("mode", ["file", "file_name", "files", "file_names"])
@@ -116,7 +130,7 @@ def test_open_file_invalid_mode():
         with pytest.raises(ValueError) as excinfo:
             mode = "invalid_mode"
             pathdialog.open_file(mode)
-        assert str(excinfo.value) == "mode was not 'file', 'file_name', 'files' or 'file_names'!"
+        assert str(excinfo.value) == f"{errors.FILE_DIALOG_INVALID_MODE}"
 
 
 @pytest.mark.parametrize("mode", ["file", "file_name", "files", "file_names"])
@@ -156,8 +170,8 @@ def test_open_dir():
 #     input_values = ["test_input"]  # Predefined input values for testing
 #     callback_mock = Mock()
 
-#     with patch("einfach.termutils.input", side_effect=input_values):
-#         async_user_input = termutils.AsyncUserInput(callback_mock, input_function=input)
+#     with patch("einfach.termutils.input", side_effect = input_values):
+#         async_user_input=termutils.AsyncUserInput(callback_mock, input_function=input)
 #         async_user_input.pause()
 #         async_user_input.resume()
 #         async_user_input.join()
@@ -172,14 +186,18 @@ def test_open_dir():
 #     callback_mock = Mock()
 #     async_input = termutils.AsyncUserInput(input_callback=callback_mock, input_function=input_mock)
 
+
 #     async_input.pause()
 #     assert async_input.paused
+
 
 #     input_mock.assert_not_called()
 #     callback_mock.assert_not_called()
 
+
 #     async_input.resume()
 #     async_input.join()
+
 
 #     input_mock.assert_called_once()
 #     callback_mock.assert_called_once()
@@ -194,12 +212,10 @@ def test_async_user_input_thread_name():
 
 
 def test_async_user_input_invokes_callback_multiple_times():
-    input_mock = Mock(side_effect=["input_1", "input_2", "input_3", "input_4", "input_5"])
+    input_mock = Mock(side_effect = ["input_1", "input_2", "input_3", "input_4", "input_5"])
     callback_mock = Mock()
-    async_input = termutils.AsyncUserInput(input_callback=callback_mock, input_function=input_mock)
-
+    async_input = termutils.AsyncUserInput(input_callback = callback_mock, input_function = input_mock)
     async_input.join()
-
     input_mock.assert_called_with()
     assert callback_mock.call_count == 5
 
@@ -208,7 +224,7 @@ def test_async_user_input_invokes_callback_multiple_times():
 def async_input_thread():
     input_mock = Mock(return_value="user_input")
     callback_mock = Mock()
-    async_input = termutils.AsyncUserInput(input_callback=callback_mock, input_function=input_mock)
+    async_input = termutils.AsyncUserInput(input_callback = callback_mock, input_function = input_mock)
     yield async_input
     async_input.pause()
     async_input.resume()
@@ -218,7 +234,6 @@ def async_input_thread():
 # def test_async_user_input_fixture_calls_input_function_and_callback(async_input_thread):
 #     input_mock = async_input_thread.input_function
 #     callback_mock = async_input_thread.input_callback
-
 #     assert input_mock.call_count == 1
 #     assert callback_mock.call_count == 1
 #     assert callback_mock.call_args == (("user_input",),)
@@ -227,12 +242,9 @@ def async_input_thread():
 # def test_async_user_input_fixture_pauses_and_resumes(async_input_thread):
 #     async_input_thread.pause()
 #     assert async_input_thread.paused
-
 #     async_input_thread.input_function.assert_not_called()
 #     async_input_thread.input_callback.assert_not_called()
-
 #     async_input_thread.resume()
 #     async_input_thread.join()
-
 #     async_input_thread.input_function.assert_called_once()
 #     async_input_thread.input_callback.assert_called_once()

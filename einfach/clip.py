@@ -1,14 +1,16 @@
-import sys, os
-
+import sys
+import os
+from internal import errors
 
 
 def clip(content: str, no_os_error: bool = False):
-    if content.isspace() == False and not content == "":
+    if content.isspace() is False and not content == "":
         if sys.platform == "win32":
             try:
                 os.system(f'echo {content} | clip')
-            except Exception as e: raise e
-        elif no_os_error == False:
-            raise OSError("Currently only win32 systems are supported!")
+            except Exception as e:
+                raise e
+        elif no_os_error is False:
+            raise OSError(errors.ONLY_WIN32)
     else:
-        raise ValueError("Content can't be empty or only contain whitespace/spaces.")
+        raise ValueError(errors.WHITE_BLANK_SPACE_ERR)

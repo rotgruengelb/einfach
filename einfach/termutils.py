@@ -12,7 +12,7 @@ class AsyncUserInput(threading.Thread):
             input_callback = callback_function
             input_functions = input
             name = 'AsyncUserInput-thread').
-        async_input.pause() 
+        async_input.pause()
         # (WARNING!: Experimental could cause Problems.) Pauses until resumed.
         async_input.resume()
         # Resume the input thread.
@@ -26,8 +26,8 @@ class AsyncUserInput(threading.Thread):
     """
 
     def __init__(self, input_callback,
-                 input_function = input,
-                 name: str = 'AsyncUserInput-thread'):
+                 input_function=input, #no space
+                 name: str='AsyncUserInput-thread'):
         self.input_callback = input_callback
         self.input_function = input_function
         self.paused = False

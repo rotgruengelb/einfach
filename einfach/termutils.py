@@ -32,7 +32,7 @@ class AsyncUserInput(threading.Thread):
         self.input_function = input_function
         self.paused = False
         self.pause_cond = threading.Condition(threading.Lock())
-        super(AsyncUserInput, self).__init__(name=name)
+        super().__init__(name=name)
         self.start()
 
     def run(self):

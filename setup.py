@@ -1,6 +1,6 @@
-from setuptools import setup, find_packages
 import codecs
 import os
+from setuptools import setup, find_packages
 from einfach import __version__, __license__
 
 here = os.path.abspath(os.path.dirname(__file__))

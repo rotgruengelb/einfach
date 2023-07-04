@@ -10,19 +10,19 @@ def open_file(mode, **filedialogargs):
         if mode == "file":
             file_path = filedialog.askopenfile(**filedialogargs)
             return file_path
-        elif mode == "file_name":
+        if mode == "file_name":
             file_path = filedialog.askopenfilename(**filedialogargs)
             return file_path
-        elif mode == "files":
+        if mode == "files":
             file_path = filedialog.askopenfiles(**filedialogargs)
             return file_path
-        elif mode == "file_names":
+        if mode == "file_names":
             file_path = filedialog.askopenfilenames(**filedialogargs)
             return file_path
         else:
             raise ValueError(errors.FILE_DIALOG_INVALID_MODE)
-    except Exception as e:
-        raise e
+    except Exception as exception:
+        raise exception
 
 
 def save_file(mode, **filedialogargs):
@@ -32,19 +32,19 @@ def save_file(mode, **filedialogargs):
         if mode == "file":
             file_path = filedialog.asksaveasfile(**filedialogargs)
             return file_path
-        elif mode == "file_name":
+        if mode == "file_name":
             file_path = filedialog.asksaveasfilename(**filedialogargs)
             return file_path
-        elif mode == "files":
+        if mode == "files":
             file_path = filedialog.askopenfiles(**filedialogargs)
             return file_path
-        elif mode == "file_names":
+        if mode == "file_names":
             file_path = filedialog.askopenfilenames(**filedialogargs)
             return file_path
         else:
             raise ValueError(errors.FILE_DIALOG_INVALID_MODE)
-    except Exception as e:
-        raise e
+    except Exception as exception:
+        raise exception
 
 
 def open_dir(**dirdialogargs):
@@ -53,5 +53,5 @@ def open_dir(**dirdialogargs):
     try:
         dir_path = filedialog.askdirectory(**dirdialogargs)
         return dir_path
-    except Exception as e:
-        raise e
+    except Exception as exception:
+        raise exception

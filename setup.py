@@ -19,7 +19,7 @@ setup(
     author="rotgruengelb (Daniel)",
     author_email="<code@rotgruengelb.net>",
     description=DESCRIPTION,
-    long_description_content_type = "text/markdown",
+    long_description_content_type="text/markdown",
     long_description=LONG_DESCRIPTION + "\n" + long_description,
     packages=find_packages(),
     license=__license__,

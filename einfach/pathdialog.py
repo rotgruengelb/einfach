@@ -19,7 +19,7 @@ def open_file(mode, **filedialogargs):
         elif mode == "file_names":
             file_path = filedialog.askopenfilenames(**filedialogargs)
             return file_path
-        else: 
+        else:
             raise ValueError(errors.FILE_DIALOG_INVALID_MODE)
     except Exception as e:
         raise e
@@ -41,7 +41,7 @@ def save_file(mode, **filedialogargs):
         elif mode == "file_names":
             file_path = filedialog.askopenfilenames(**filedialogargs)
             return file_path
-        else: 
+        else:
             raise ValueError(errors.FILE_DIALOG_INVALID_MODE)
     except Exception as e:
         raise e

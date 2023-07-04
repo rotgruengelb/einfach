@@ -18,6 +18,7 @@ def test_clip_success():
     assert True
     sys.platform = platform
 
+
 def test_clip_with_no_os_error():
     platform = sys.platform
     sys.platform = "win32"
@@ -27,6 +28,7 @@ def test_clip_with_no_os_error():
     # You can add additional assertions here to check the clipboard contents
     assert True
     sys.platform = platform
+
 
 def test_clip_empty_content():
     platform = sys.platform
@@ -38,6 +40,7 @@ def test_clip_empty_content():
     assert str(excinfo.value) == f"{errors.FILE_DIALOG_INVALID_MODE}"
     sys.platform = platform
 
+
 def test_clip_whitespace_content():
     platform = sys.platform
     with pytest.raises(ValueError) as excinfo:
@@ -47,6 +50,7 @@ def test_clip_whitespace_content():
     # Assert that a ValueError is raised with the appropriate message
     assert str(excinfo.value) == f"{errors.FILE_DIALOG_INVALID_MODE}"
     sys.platform = platform
+
 
 def test_clip_non_supported_platform():
     platform = sys.platform
@@ -64,9 +68,11 @@ def test_would_be_valid_float_valid_input():
     value = "3.14"
     assert floatutils.would_be_valid_float(value) is True
 
+
 def test_would_be_valid_float_invalid_input():
     value = "not a float"
     assert floatutils.would_be_valid_float(value) is False
+
 
 def test_is_float_in_range_within_range():
     value = 5.0
@@ -74,11 +80,13 @@ def test_is_float_in_range_within_range():
     max_value = 10.0
     assert floatutils.is_float_in_range(value, min_value, max_value) is True
 
+
 def test_is_float_in_range_below_range():
     value = 0.5
     min_value = 1.0
     max_value = 10.0
     assert floatutils.is_float_in_range(value, min_value, max_value) is False
+
 
 def test_is_float_in_range_above_range():
     value = 15.0
@@ -86,17 +94,20 @@ def test_is_float_in_range_above_range():
     max_value = 10.0
     assert floatutils.is_float_in_range(value, min_value, max_value) is False
 
+
 def test_is_float_in_range_at_boundary():
     value = 10.0
     min_value = 1.0
     max_value = 10.0
     assert floatutils.is_float_in_range(value, min_value, max_value) is True
 
+
 def test_is_float_in_range_with_integer_values():
     value = 5
     min_value = 1
     max_value = 10
     assert floatutils.is_float_in_range(value, min_value, max_value) is True
+
 
 
 @pytest.mark.parametrize("mode", ["file", "file_name", "files", "file_names"])
@@ -175,14 +186,18 @@ def test_open_dir():
 #     callback_mock = Mock()
 #     async_input = termutils.AsyncUserInput(input_callback=callback_mock, input_function=input_mock)
 
+
 #     async_input.pause()
 #     assert async_input.paused
+
 
 #     input_mock.assert_not_called()
 #     callback_mock.assert_not_called()
 
+
 #     async_input.resume()
 #     async_input.join()
+
 
 #     input_mock.assert_called_once()
 #     callback_mock.assert_called_once()
@@ -200,9 +215,7 @@ def test_async_user_input_invokes_callback_multiple_times():
     input_mock = Mock(side_effect = ["input_1", "input_2", "input_3", "input_4", "input_5"])
     callback_mock = Mock()
     async_input = termutils.AsyncUserInput(input_callback = callback_mock, input_function = input_mock)
-
     async_input.join()
-
     input_mock.assert_called_with()
     assert callback_mock.call_count == 5
 
@@ -221,7 +234,6 @@ def async_input_thread():
 # def test_async_user_input_fixture_calls_input_function_and_callback(async_input_thread):
 #     input_mock = async_input_thread.input_function
 #     callback_mock = async_input_thread.input_callback
-
 #     assert input_mock.call_count == 1
 #     assert callback_mock.call_count == 1
 #     assert callback_mock.call_args == (("user_input",),)
@@ -230,12 +242,9 @@ def async_input_thread():
 # def test_async_user_input_fixture_pauses_and_resumes(async_input_thread):
 #     async_input_thread.pause()
 #     assert async_input_thread.paused
-
 #     async_input_thread.input_function.assert_not_called()
 #     async_input_thread.input_callback.assert_not_called()
-
 #     async_input_thread.resume()
 #     async_input_thread.join()
-
 #     async_input_thread.input_function.assert_called_once()
 #     async_input_thread.input_callback.assert_called_once()

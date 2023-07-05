@@ -1,5 +1,7 @@
-# clip (clip.clip)
-Puts a string into the user's clipboard 
+# copy
+
+Copies a string into the user's clipboard 
+
 !!! warning "Compatibility"
 
     This currently only works on the `win32` (Windows OS) platform.
@@ -13,13 +15,13 @@ Puts a string into the user's clipboard
 
 **Use**:
 ```py
-from einfach import clip # or use from einfach.clip import clip (remove the `clip.` in front of clip)
-    
-clip.clip(content="Hello World") 
+from einfach import clip
+
+clip.copy(content="Hello World") 
 # This will copy 'Hello World' into the users clipboard (if on win32).
 # This wont ignore the OSError that is raised when not run on win32.
     
-clip.clip(content="Hi! :D", no_os_error=True) 
+clip.copy(content="Hi! :D", no_os_error=True) 
 # This will ignore the OSError if run on a non win32 platform. 
 # Note: This will result in the clipboard not changing on the non-win32 system. 
 ```

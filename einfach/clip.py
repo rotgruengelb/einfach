@@ -3,7 +3,7 @@ import os
 from internal import errors
 
 
-def clip(content: str, no_os_error: bool = False):
+def copy(content: str, no_os_error: bool = False):
     if content.isspace() is False and not content == "":
         if sys.platform == "win32":
             try:

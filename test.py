@@ -7,56 +7,56 @@ from einfach.internal import errors
 
 print(__version__, __license__)
 
-def test_clip_success():
+def test_clip_copy_success():
     platform = sys.platform
     sys.platform = "win32"
     content = "Hello, world!"
-    clip.clip(content)
+    clip.copy(content)
     # Assert that the content is successfully clipped to the clipboard
     # You can add additional assertions here to check the clipboard contents
     assert True
     sys.platform = platform
 
 
-def test_clip_with_no_os_error():
+def test_clip_copy__with_no_os_error():
     platform = sys.platform
     sys.platform = "win32"
     content = "Hello, world!"
-    clip.clip(content, no_os_error = True)
+    clip.copy(content, no_os_error = True)
     # Assert that the content is successfully clipped to the clipboard
     # You can add additional assertions here to check the clipboard contents
     assert True
     sys.platform = platform
 
 
-def test_clip_empty_content():
+def test_clip_copy_empty_content():
     platform = sys.platform
     sys.platform = "win32"
     with pytest.raises(ValueError) as excinfo:
         content = ""
-        clip.clip(content)
+        clip.copy(content)
     # Assert that a ValueError is raised with the appropriate message
     assert str(excinfo.value) == f"{errors.FILE_DIALOG_INVALID_MODE}"
     sys.platform = platform
 
 
-def test_clip_whitespace_content():
+def test_clip_copy__whitespace_content():
     platform = sys.platform
     with pytest.raises(ValueError) as excinfo:
         sys.platform = "win32"
         content = "   "
-        clip.clip(content)
+        clip.copy(content)
     # Assert that a ValueError is raised with the appropriate message
     assert str(excinfo.value) == f"{errors.FILE_DIALOG_INVALID_MODE}"
     sys.platform = platform
 
 
-def test_clip_non_supported_platform():
+def test_clip_copy_non_supported_platform():
     platform = sys.platform
     with pytest.raises(OSError) as excinfo:
         content = "Hello, world!"
         sys.platform = "linux"  # Simulating a non-supported platform
-        clip.clip(content)
+        clip.copy(content)
     # Assert that an OSError is raised with the appropriate message
     assert str(excinfo.value) == f"{errors.ONLY_WIN32}"
     sys.platform = platform  # Restore the original platform value

@@ -1,10 +1,17 @@
-# clip
+# clip.py
 
 ```py
 from einfach import clip
 ```
 
+The `clip.py` file contains only 1 function which is its main purpose.
+
+```py
+from einfach import clip
+clip.copy("This is put into the clipboard!")
+```
+
 ## Contains
-|function/class|Discription|Use|
+|Function/Class|Discription|Use|
 | --- | --- | --- |
-| clip | A function for putting text into the users clipboard| [clip](clip.md)
+| copy | A function for putting/copying text into the users clipboard| [Use/More...](copy.md)

@@ -1,5 +1,5 @@
-# Welcome to the einfach Documentation
-
+# Welcome
+Welcome at the einfach Documentation
 ## Get started
 ```bash
 pip install einfach

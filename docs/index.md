@@ -10,4 +10,3 @@ from einfach import ...
 ```
 
 # [Click for Feature Overview](features)
-

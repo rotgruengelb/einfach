@@ -20,9 +20,9 @@ theme:
         name: Switch to light mode    
       primary: teal
       accent: lime
-    - scheme: default
+    - scheme: xdefault
       toggle:
-        icon: material/toggle-switch-off-outline 
+        icon: material/toggle-switch-off-outline
         name: Switch to dark mode
       primary: teal
       accent: purple

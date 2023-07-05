@@ -247,3 +247,4 @@ def async_input_thread():
 #     async_input_thread.join()
 #     async_input_thread.input_function.assert_called_once()
 #     async_input_thread.input_callback.assert_called_once()
+

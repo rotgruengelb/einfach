@@ -1,5 +1,5 @@
 site_name: einfach
-site_url: https://einfach.github.io
+site_url: https://rotgruengelb.github.io/einfach
 theme:
   name: material
   features:
@@ -30,6 +30,8 @@ theme:
 
 plugins:
   - social
+  - search:
+    - lang: en
 
 extra:
   social:

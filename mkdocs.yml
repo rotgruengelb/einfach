@@ -30,8 +30,7 @@ theme:
 
 plugins:
   - social
-  - search:
-    - lang: en
+  - search
 
 extra:
   social:

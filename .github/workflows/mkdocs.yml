@@ -2,7 +2,6 @@ name: mkdocs
 on:
   push:
     branches:
-      - master
       - docs
 permissions:
   contents: write

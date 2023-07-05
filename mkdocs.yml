@@ -14,18 +14,18 @@ theme:
     - content.code.copy
   language: en
   palette:
-    - scheme: dark
+    - scheme: light
       toggle:
         icon: material/toggle-switch-off-outline 
-        name: Switch to light mode
-      primary: red
-      accent: lime
-    - scheme: slate
+        name: Switch to dark mode
+      primary: teal
+      accent: purple 
+    - scheme: default 
       toggle:
         icon: material/toggle-switch
-        name: Switch to dark mode    
+        name: Switch to light mode    
       primary: teal
-      accent: purple
+      accent: lime
 
 
 plugins:
@@ -33,12 +33,12 @@ plugins:
 
 extra:
   social:
-    - icon: fontawesome/brands/github-alt
-      link: https://github.com/james-willett
+    - icon: fontawesome/brands/github
+      link: https://github.com/rotgruengelb
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/TheJamesWillett
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/willettjames/
+      link: https://twitter.com/rotgruengelblab
+    - icon: fontawesome/brands/youtube
+      link: https://youtube.com/rotgruengelb
 
 markdown_extensions:
   - pymdownx.highlight:

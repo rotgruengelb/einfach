@@ -2,9 +2,9 @@ from unittest.mock import Mock, patch
 import sys
 import pytest
 from einfach import termutils, clip, floatutils, pathdialog, __license__, __version__
-from einfach.internal import errors
+import einfach.errors as errors
 
-
+FILE_DIALOG_INVALID_MODE = errors.FILE_DIALOG_INVALID_MODE
 print(__version__, __license__)
 
 def test_clip_copy_success():
@@ -36,7 +36,7 @@ def test_clip_copy_empty_content():
         content = ""
         clip.copy(content)
     # Assert that a ValueError is raised with the appropriate message
-    assert str(excinfo.value) == f"{errors.FILE_DIALOG_INVALID_MODE}"
+    assert str(excinfo.value) == f"{errors.WHITE_BLANK_SPACE_ERR}"
     sys.platform = platform
 
 
@@ -47,7 +47,7 @@ def test_clip_copy__whitespace_content():
         content = "   "
         clip.copy(content)
     # Assert that a ValueError is raised with the appropriate message
-    assert str(excinfo.value) == f"{errors.FILE_DIALOG_INVALID_MODE}"
+    assert str(excinfo.value) == f"{errors.WHITE_BLANK_SPACE_ERR}"
     sys.platform = platform
 
 
@@ -129,7 +129,7 @@ def test_open_file_invalid_mode():
         with pytest.raises(ValueError) as excinfo:
             mode = "invalid_mode"
             pathdialog.open_file(mode)
-        assert str(excinfo.value) == f"{errors.FILE_DIALOG_INVALID_MODE}"
+        assert str(excinfo.value) == f"{FILE_DIALOG_INVALID_MODE}"
 
 
 @pytest.mark.parametrize("mode", ["file", "file_name", "files", "file_names"])
@@ -152,7 +152,7 @@ def test_save_file_invalid_mode():
         with pytest.raises(ValueError) as excinfo:
             mode = "invalid_mode"
             pathdialog.save_file(mode)
-        assert str(excinfo.value) == "mode was not 'file', 'file_name', 'files' or 'file_names'!"
+        assert str(excinfo.value) == f"{errors.FILE_DIALOG_INVALID_MODE}"
 
 
 def test_open_dir():

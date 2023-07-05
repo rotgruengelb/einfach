@@ -1,6 +1,6 @@
 import sys
 import os
-from internal import errors
+import einfach.errors as errors
 
 
 def copy(content: str, no_os_error: bool = False):

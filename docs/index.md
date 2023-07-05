@@ -8,8 +8,6 @@ Its that easy!
 ```py
 from einfach import ...
 ```
-## Features
 
-Want to know what this python package provides?
-[Then click here](https://example.net)
+# [Click for Feature Overview](features)
 

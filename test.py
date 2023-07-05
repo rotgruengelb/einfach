@@ -2,7 +2,7 @@ from unittest.mock import Mock, patch
 import sys
 import pytest
 from einfach import termutils, clip, floatutils, pathdialog, __license__, __version__
-import einfach.errors as errors
+from einfach import errors as errors
 
 FILE_DIALOG_INVALID_MODE = errors.FILE_DIALOG_INVALID_MODE
 print(__version__, __license__)
@@ -247,4 +247,3 @@ def async_input_thread():
 #     async_input_thread.join()
 #     async_input_thread.input_function.assert_called_once()
 #     async_input_thread.input_callback.assert_called_once()
-

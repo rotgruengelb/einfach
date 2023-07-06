@@ -2,6 +2,6 @@
 ```shell
 pip install einfach
 ```
-Get Started with readingf de Documentation:
+Get Started with reading the Documentation:
 # Use/Features
 [List of Features on the Features Wiki Page](https://rotgruengelb.github.io/einfach)

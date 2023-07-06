@@ -8,10 +8,10 @@ Copies a string into the user's clipboard
 
 ## Possible Arguments:
 
-|Argument|Description|Type|Default|
-|--| ---------------------------------------------------------------------------|--|--|
-|**`content`** | The String that should be put in the users clipboard. _This string cannot be empty or only contain whitespace/spaces_| `str` | |
-|`no_os_error`|Tells the function to not raise a `OSError` when the operating system is not `win32`| `bool` |`False`|
+| Argument | Description | Type | Default |
+| --- | --- | --- | --- |
+| **`content`** | The String that should be put in the users clipboard. _This string cannot be empty or only contain whitespace/spaces_ | `str` |  |
+| **`no_os_error`** | Tells the function to not raise a `OSError` when the operating system is not `win32` | `bool` | `False` |
 
 ## Use:
 ```py

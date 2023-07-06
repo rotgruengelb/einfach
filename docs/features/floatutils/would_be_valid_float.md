@@ -4,9 +4,9 @@ Checks if a given string value can be converted to a valid float.
 
 ## Possible Arguments:
 
-| Argument    | Description                                                  | Type     | Default |
-| ----------- | ------------------------------------------------------------ | -------- | ------- |
-| **`value`** | The string value to be checked.                              | `str`    |         |
+| Argument | Description | Type | Default |
+| --- | --- | --- | --- |
+| **`value`** | The string value to be checked. | `str` |  |
 
 ## Returns:
 

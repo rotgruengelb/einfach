@@ -4,9 +4,9 @@ Opens a directory dialog to prompt the user for selecting a directory.
 
 ## Possible Arguments:
 
-| Argument              | Description                                                                   | Type                  | Default |
-| --------------------- | ----------------------------------------------------------------------------- | --------------------- | ------- |
-| **`**dirdialogargs`** | Additional keyword arguments to be passed to the underlying directory dialog method. | `**kwargs`            |         |
+| Argument | Description | Type | Default |
+| --- | --- | --- | --- |
+| **`**dirdialogargs`** | Additional keyword arguments to be passed to the underlying directory dialog method. | `**kwargs` |  |
 
 ## Returns:
 
@@ -25,4 +25,4 @@ dir_path = open_dir(title="Select a directory")
 ```
 
 !!! note
-    There are no `modes` for `open_dir`
+    There are no `modes` for `open_dir`.

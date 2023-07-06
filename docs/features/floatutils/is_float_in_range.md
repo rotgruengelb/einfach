@@ -4,11 +4,11 @@ Checks if a given float or integer value is within a specified range.
 
 ## Possible Arguments:
 
-| Argument   | Description                                                  | Type                 | Default |
-| ---------- | ------------------------------------------------------------ | -------------------- | ------- |
-| **`value`** | The value to be checked.                                     | `float` or `int`     |         |
-| **`min_value`** | The minimum value of the range.                             | `float` or `int`     |         |
-| **`max_value`** | The maximum value of the range.                             | `float` or `int`     |         |
+| Argument | Description | Type | Default |
+| --- | --- | --- | --- |
+| **`value`** | The value to be checked. | `float` or `int` |  |
+| **`min_value`** | The minimum value of the range. | `float` or `int` |  |
+| **`max_value`** | The maximum value of the range. | `float` or `int` |  |
 
 ## Returns:
 

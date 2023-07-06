@@ -12,6 +12,6 @@ clip.copy("This is put into the clipboard!")
 ```
 
 ## Contains
-|Function/Class|Discription|Use|
+| Function/Class | Description | Use |
 | --- | --- | --- |
-| copy | A function for putting/copying text into the users clipboard| [Use/More...](copy.md)
+| **`copy`** | A function for putting/copying text into the users clipboard | [Use/More...](copy.md) |

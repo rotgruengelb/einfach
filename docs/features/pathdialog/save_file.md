@@ -4,10 +4,10 @@ Opens a file dialog to prompt the user for file saving based on the specified mo
 
 ## Possible Arguments:
 
-| Argument              | Description                                                                   | Type                  | Default |
-| --------------------- | ----------------------------------------------------------------------------- | --------------------- | ------- |
-| **`mode`**            | The mode of the file dialog.                                                  | `str`                 |         |
-| **`**filedialogargs`** | Additional keyword arguments to be passed to the underlying file dialog method from tkinter. | `**kwargs`            |         |
+| Argument | Description | Type | Default |
+| --- | --- | --- | --- |
+| **`mode`** | The mode of the file dialog. | `str` |  |
+| **`**filedialogargs`** | Additional keyword arguments to be passed to the underlying file dialog method from tkinter. | `**kwargs` |  |
 
 ## Returns:
 
@@ -35,4 +35,4 @@ file_path = save_file(mode="file_name", title="Save a file", defaultextension=".
 ```
 
 !!! note
-    There is no "files" or "file_names" mode for saving files
+    There is no `"files"` or `"file_names"` mode for saving files.

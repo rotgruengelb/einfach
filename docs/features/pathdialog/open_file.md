@@ -4,10 +4,10 @@ Opens a file dialog to prompt the user for file selection based on the specified
 
 ## Possible Arguments:
 
-| Argument              | Description                                                                   | Type                  | Default |
-| --------------------- | ----------------------------------------------------------------------------- | --------------------- | ------- |
-| **`mode`**            | The mode of the file dialog.                                                  | `str`                 |         |
-| **`**filedialogargs`** | Additional keyword arguments to be passed to the underlying file dialog method from tkinter. | `**kwargs`            |         |
+| Argument | Description | Type | Default |
+| --- | --- | --- | --- |
+| **`mode`** | The mode of the file dialog. | `str` |  |
+| **`**filedialogargs`** | Additional keyword arguments to be passed to the underlying file dialog method from tkinter. | `**kwargs` |  |
 
 ## Returns:
 

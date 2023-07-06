@@ -9,6 +9,7 @@ A class that runs as a separate thread for capturing user input asynchronously.
 | **`input_callback`**| Callback function to be invoked when input is received.| `function (without `( )`)` |  |
 | **`input_function`** | The input function to use for capturing user input. | `function (without `( )`)` | `input` |
 | **`name`** | The name of the thread. | `str` | `'AsyncUserInput-thread'` |
+
 ## Additional Class Methods:
 
 ### `run(self)`

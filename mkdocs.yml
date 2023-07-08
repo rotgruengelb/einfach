@@ -1,6 +1,11 @@
 site_name: einfach
-site_url: https://einfach.github.io
+site_url: https://rotgruengelb.github.io/einfach
+repo_url: https://github.com/rotgruengelb/einfach
+repo_name: rotgruengelb/einfach
+
 theme:
+  icon:
+    repo: fontawesome/brands/github
   name: material
   features:
     - navigation.tabs
@@ -30,6 +35,7 @@ theme:
 
 plugins:
   - social
+  - search
 
 extra:
   social:

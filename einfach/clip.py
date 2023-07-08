@@ -9,7 +9,7 @@ def copy(content: str, no_os_error: bool = False):
             if sys.platform == 'win32':
                 os.system(f'echo {content} | clip')
             if sys.platform == 'darwin':
-                os.system(f'printf | pbcopy')
+                os.system(f'printf {content} | pbcopy')
             elif no_os_error is False:
                 raise OSError(errors.CLIP_COMPAT)
         except Exception as exception:

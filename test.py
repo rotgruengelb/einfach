@@ -1,8 +1,7 @@
 from unittest.mock import Mock, patch
 import sys
 import pytest
-from einfach import termutils, clip, floatutils, pathdialog, __license__, __version__
-from einfach import errors
+from einfach import termutils, clip, floatutils, pathdialog, __license__, __version__, errors
 
 FILE_DIALOG_INVALID_MODE = errors.FILE_DIALOG_INVALID_MODE
 print(__version__, __license__)

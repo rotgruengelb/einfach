@@ -57,7 +57,7 @@ def test_clip_copy_non_supported_platform():
         sys.platform = "linux"  # Simulating a non-supported platform
         clip.copy(content)
     # Assert that an OSError is raised with the appropriate message
-    assert str(excinfo.value) == f"{errors.ONLY_WIN32}"
+    assert str(excinfo.value) == f"{errors.CLIP_COMPAT}"
     sys.platform = platform  # Restore the original platform value
 
 

@@ -1,9 +1,10 @@
 from unittest.mock import Mock, patch
 import sys
 import pytest
-from einfach import termutils, clip, floatutils, pathdialog, __license__, __version__, errors
+from einfach import termutils, clip, floatutils, pathdialog, __license__, __version__
+from einfach.internals import errors
 
-FILE_DIALOG_INVALID_MODE = errors.FILE_DIALOG_INVALID_MODE
+
 print(__version__, __license__)
 
 def test_clip_copy_success():
@@ -128,7 +129,7 @@ def test_open_file_invalid_mode():
         with pytest.raises(ValueError) as excinfo:
             mode = "invalid_mode"
             pathdialog.open_file(mode)
-        assert str(excinfo.value) == f"{FILE_DIALOG_INVALID_MODE}"
+        assert str(excinfo.value) == f"{errors.FILE_DIALOG_INVALID_MODE}"
 
 
 @pytest.mark.parametrize("mode", ["file", "file_name", "files", "file_names"])

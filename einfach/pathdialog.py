@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
-from internals import errors
+from einfach.internals import errors
 
 
 def open_file(mode, **filedialogargs):

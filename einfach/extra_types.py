@@ -1,4 +1,4 @@
-from internals import errors
+from einfach.internals import errors
 
 
 class Vector:
@@ -55,8 +55,7 @@ class Color:
     def __str__(self, force_rgba: bool=False) -> str:
         if self.a == 255 and force_rgba is not True:
             return f"RGB({self.r}, {self.g}, {self.b})"
-        else:
-            return f"RGBA({self.r}, {self.g}, {self.b}, {self.a})"
+        return f"RGBA({self.r}, {self.g}, {self.b}, {self.a})"
 
     def __repr__(self) -> str:
         return str(self)

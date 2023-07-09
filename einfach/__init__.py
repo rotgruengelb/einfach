@@ -2,8 +2,7 @@ __all__ = [
         'clip',
         'floatutils',
         'pathdialog',
-        'termutils',
-        'errors'
+        'termutils'
         ]
 
 __version__ = '0.2.3.0'
